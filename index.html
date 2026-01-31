@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CLIFF NOTEZ - Doctorate-Level Document Analysis</title>
   <meta name="description" content="Evidence-first research and analysis. Multi-source verification, claim-level confidence ratings, and traceable citations.">
-  <meta property="og:title" content="CLIFF NOTEZ - Doctorate-Level Document Analysis">
-  <meta property="og:description" content="Turn complex documents into actionable insights with AI-powered analysis.">
-  <meta property="og:url" content="https://cliff.dubltap.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -15,7 +12,6 @@
 :root {
   --sunset-gold: #F4A261;
   --sunset-coral: #E76F51;
-  --sunset-peach: #FFBE98;
   --ocean-deep: #264653;
   --ocean-teal: #2A9D8F;
   --ocean-foam: #A8DADC;
@@ -25,7 +21,6 @@
   --sand-dark: #4A4238;
   --cliff-amber: #D4A574;
   --cliff-gold: #C9A227;
-  --cliff-navy: #1E3A5F;
   --space-xs: 0.382rem;
   --space-sm: 0.618rem;
   --space-md: 1rem;
@@ -34,11 +29,8 @@
   --space-2xl: 4.236rem;
   --font-display: 'Outfit', system-ui, sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
   font-family: var(--font-body);
   background: linear-gradient(135deg, #FDF8F3 0%, #F5EDE4 50%, #EDE4D8 100%);
@@ -46,9 +38,8 @@ body {
   min-height: 100vh;
   line-height: 1.6;
 }
-
 .header {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--ocean-foam);
   padding: var(--space-md) var(--space-lg);
@@ -56,7 +47,6 @@ body {
   top: 0;
   z-index: 100;
 }
-
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -66,13 +56,11 @@ body {
   flex-wrap: wrap;
   gap: var(--space-md);
 }
-
 .logo-section {
   display: flex;
   align-items: center;
   gap: var(--space-md);
 }
-
 .logo {
   width: 48px;
   height: 48px;
@@ -85,28 +73,22 @@ body {
   font-weight: 700;
   font-size: 1.2rem;
   color: white;
-  box-shadow: 0 4px 12px rgba(201, 162, 39, 0.3);
 }
-
 .brand-text h1 {
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--ocean-deep);
 }
-
 .brand-text span {
   font-size: 0.75rem;
   color: var(--sand-medium);
 }
-
 .header-actions {
   display: flex;
   gap: var(--space-sm);
   align-items: center;
-  flex-wrap: wrap;
 }
-
 .btn {
   font-family: var(--font-body);
   font-weight: 600;
@@ -114,70 +96,51 @@ body {
   border-radius: 100px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s;
   font-size: 0.9rem;
 }
-
 .btn-primary {
   background: linear-gradient(135deg, var(--sunset-gold), var(--sunset-coral));
   color: white;
-  box-shadow: 0 4px 12px rgba(244, 162, 97, 0.3);
 }
-
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(244, 162, 97, 0.4);
 }
-
 .btn-secondary {
   background: transparent;
   color: var(--ocean-deep);
   border: 1px solid var(--ocean-foam);
 }
-
-.btn-secondary:hover {
-  background: var(--sand-warm);
-}
-
 .usage-badge {
   background: var(--sand-warm);
   padding: var(--space-xs) var(--space-sm);
   border-radius: 100px;
   font-size: 0.75rem;
-  color: var(--sand-dark);
 }
-
 .hero {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--space-2xl) var(--space-lg);
   text-align: center;
 }
-
 .hero h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   color: var(--ocean-deep);
   margin-bottom: var(--space-md);
-  line-height: 1.2;
 }
-
 .hero h2 span {
   background: linear-gradient(135deg, var(--cliff-amber), var(--cliff-gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
-
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--sand-dark);
   max-width: 600px;
-  margin: 0 auto var(--space-xl);
-  opacity: 0.9;
+  margin: 0 auto;
 }
-
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -186,22 +149,17 @@ body {
   grid-template-columns: 1fr 2fr;
   gap: var(--space-xl);
 }
-
 @media (max-width: 900px) {
   .app-container { grid-template-columns: 1fr; }
 }
-
 .input-panel {
   background: white;
   border-radius: 20px;
   padding: var(--space-lg);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   border: 1px solid var(--ocean-foam);
   height: fit-content;
-  position: sticky;
-  top: 100px;
 }
-
 .panel-title {
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -209,155 +167,53 @@ body {
   color: var(--ocean-deep);
   margin-bottom: var(--space-md);
 }
-
 .mode-selector {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-sm);
   margin-bottom: var(--space-lg);
 }
-
 .mode-btn {
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm);
   border: 1px solid var(--ocean-foam);
   border-radius: 10px;
   background: white;
   cursor: pointer;
-  transition: all 0.2s;
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--sand-dark);
   font-family: var(--font-body);
+  transition: all 0.2s;
 }
-
 .mode-btn:hover {
   border-color: var(--ocean-teal);
-  background: rgba(42, 157, 143, 0.05);
 }
-
 .mode-btn.active {
   background: linear-gradient(135deg, var(--ocean-teal), var(--ocean-deep));
   color: white;
   border-color: transparent;
 }
-
 .input-area { margin-bottom: var(--space-md); }
-
 .input-area label {
   display: block;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--sand-dark);
   margin-bottom: var(--space-xs);
 }
-
 .input-area textarea {
   width: 100%;
-  min-height: 150px;
+  min-height: 120px;
   padding: var(--space-md);
   border: 1px solid var(--ocean-foam);
   border-radius: 12px;
   font-family: var(--font-body);
   font-size: 0.95rem;
   resize: vertical;
-  transition: border-color 0.2s;
 }
-
 .input-area textarea:focus {
   outline: none;
   border-color: var(--ocean-teal);
-  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
 }
-
-.file-upload {
-  border: 2px dashed var(--ocean-foam);
-  border-radius: 12px;
-  padding: var(--space-lg);
-  text-align: center;
-  margin-bottom: var(--space-md);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.file-upload:hover {
-  border-color: var(--ocean-teal);
-  background: rgba(42, 157, 143, 0.02);
-}
-
-.file-upload-icon { font-size: 2rem; margin-bottom: var(--space-sm); }
-
-.file-upload p {
-  font-size: 0.85rem;
-  color: var(--sand-medium);
-}
-
-.file-upload span {
-  color: var(--ocean-teal);
-  font-weight: 600;
-}
-
-.toggle-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-sm) 0;
-  border-top: 1px solid var(--sand-warm);
-  margin-bottom: var(--space-md);
-}
-
-.toggle-label {
-  font-size: 0.85rem;
-  color: var(--sand-dark);
-}
-
-.toggle-label small {
-  display: block;
-  color: var(--sand-medium);
-  font-size: 0.75rem;
-}
-
-.toggle-switch {
-  position: relative;
-  width: 44px;
-  height: 24px;
-}
-
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.toggle-slider {
-  position: absolute;
-  cursor: pointer;
-  inset: 0;
-  background: var(--sand-warm);
-  border-radius: 24px;
-  transition: 0.3s;
-}
-
-.toggle-slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background: white;
-  border-radius: 50%;
-  transition: 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.toggle-switch input:checked + .toggle-slider {
-  background: var(--ocean-teal);
-}
-
-.toggle-switch input:checked + .toggle-slider:before {
-  transform: translateX(20px);
-}
-
 .analyze-btn {
   width: 100%;
   padding: var(--space-md);
@@ -370,339 +226,58 @@ body {
   font-weight: 600;
   font-family: var(--font-body);
   transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
 }
-
 .analyze-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 162, 39, 0.3);
 }
-
 .analyze-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
-
 .output-panel {
   background: white;
   border-radius: 20px;
   padding: var(--space-lg);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   border: 1px solid var(--ocean-foam);
 }
-
-.freshness-banner {
-  background: linear-gradient(135deg, rgba(42, 157, 143, 0.1), rgba(38, 70, 83, 0.1));
-  border-radius: 12px;
-  padding: var(--space-md);
-  margin-bottom: var(--space-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.freshness-icon {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--cliff-amber), var(--cliff-gold));
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.2rem;
-}
-
-.freshness-info strong {
-  display: block;
-  color: var(--ocean-deep);
-  font-size: 0.9rem;
-}
-
-.freshness-info span {
-  font-size: 0.8rem;
-  color: var(--sand-medium);
-}
-
-.verified-badge {
-  margin-left: auto;
-  background: var(--ocean-teal);
-  color: white;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 100px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.view-tabs {
-  display: flex;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
-  border-bottom: 1px solid var(--sand-warm);
-  padding-bottom: var(--space-sm);
-}
-
-.view-tab {
-  padding: var(--space-sm) var(--space-md);
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  font-family: var(--font-body);
-  color: var(--sand-medium);
-  border-radius: 8px 8px 0 0;
-  transition: all 0.2s;
-}
-
-.view-tab:hover { color: var(--ocean-deep); }
-
-.view-tab.active {
-  color: var(--ocean-teal);
-  background: rgba(42, 157, 143, 0.1);
-}
-
-.claim-card {
+.result-card {
   background: var(--sand-light);
   border: 1px solid var(--ocean-foam);
   border-radius: 12px;
   padding: var(--space-md);
   margin-bottom: var(--space-md);
-  transition: all 0.2s;
 }
-
-.claim-card:hover {
-  border-color: var(--ocean-teal);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.claim-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: var(--space-sm);
-  gap: var(--space-sm);
-}
-
-.claim-text {
-  font-size: 0.95rem;
-  color: var(--ocean-deep);
-  flex: 1;
-}
-
-.ecr-chip {
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 100px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.ecr-5 { background: rgba(42, 157, 143, 0.15); color: #1a7a6d; }
-.ecr-4 { background: rgba(59, 130, 246, 0.15); color: #2563eb; }
-.ecr-3 { background: rgba(245, 158, 11, 0.15); color: #d97706; }
-.ecr-2 { background: rgba(249, 115, 22, 0.15); color: #ea580c; }
-.ecr-1 { background: rgba(239, 68, 68, 0.15); color: #dc2626; }
-
-.claim-meta {
-  display: flex;
-  gap: var(--space-sm);
-  flex-wrap: wrap;
-}
-
-.source-link {
-  font-size: 0.75rem;
-  color: var(--ocean-teal);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 2px 8px;
-  background: rgba(42, 157, 143, 0.1);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.source-link:hover {
-  background: rgba(42, 157, 143, 0.2);
-}
-
-.bucket-badge {
-  font-size: 0.7rem;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-weight: 500;
-}
-
-.bucket-common { background: rgba(42, 157, 143, 0.1); color: var(--ocean-teal); }
-.bucket-disputed { background: rgba(244, 162, 97, 0.15); color: var(--sunset-coral); }
-
-.quote-card {
-  background: white;
-  border-left: 4px solid var(--cliff-amber);
-  padding: var(--space-md);
-  margin-bottom: var(--space-md);
-  border-radius: 0 12px 12px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-}
-
-.quote-text {
-  font-style: italic;
+.result-card h4 {
   color: var(--ocean-deep);
   margin-bottom: var(--space-sm);
-}
-
-.quote-source {
-  font-size: 0.8rem;
-  color: var(--sand-medium);
-}
-
-.math-check {
-  background: linear-gradient(135deg, rgba(30, 58, 95, 0.05), rgba(201, 162, 39, 0.05));
-  border: 1px solid var(--ocean-foam);
-  border-radius: 12px;
-  padding: var(--space-md);
-  margin-bottom: var(--space-md);
-}
-
-.math-check-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-sm);
-  font-weight: 600;
-  color: var(--cliff-navy);
-}
-
-.math-values {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
-  margin-bottom: var(--space-sm);
-}
-
-.math-value {
-  background: white;
-  padding: var(--space-sm);
-  border-radius: 8px;
-  text-align: center;
-}
-
-.math-value label {
-  font-size: 0.75rem;
-  color: var(--sand-medium);
-  display: block;
-}
-
-.math-value strong {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  color: var(--ocean-deep);
-}
-
-.discrepancy-flag {
-  background: rgba(239, 68, 68, 0.1);
-  color: #dc2626;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 6px;
-  font-size: 0.8rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.sources-section {
-  border-top: 1px solid var(--sand-warm);
-  padding-top: var(--space-lg);
-  margin-top: var(--space-lg);
-}
-
-.sources-title {
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ocean-deep);
-  margin-bottom: var(--space-md);
 }
-
-.source-item {
-  display: flex;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  background: var(--sand-light);
-  border-radius: 10px;
-  margin-bottom: var(--space-sm);
-  transition: all 0.2s;
+.result-card ul {
+  margin-left: var(--space-lg);
 }
-
-.source-item.highlighted {
-  background: rgba(42, 157, 143, 0.15);
-  border: 1px solid var(--ocean-teal);
+.result-card li {
+  margin-bottom: var(--space-xs);
 }
-
-.source-icon {
-  width: 36px;
-  height: 36px;
-  background: var(--ocean-foam);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ocean-deep);
-  flex-shrink: 0;
-}
-
-.source-details h4 {
-  font-size: 0.9rem;
-  color: var(--ocean-deep);
-  margin-bottom: 2px;
-}
-
-.source-details p {
-  font-size: 0.8rem;
-  color: var(--sand-medium);
-}
-
-.source-tag {
-  font-size: 0.7rem;
-  padding: 2px 6px;
-  background: var(--sand-warm);
-  border-radius: 4px;
-  color: var(--sand-dark);
-  margin-top: 4px;
-  display: inline-block;
-}
-
 .placeholder-state {
   text-align: center;
   padding: var(--space-2xl);
   color: var(--sand-medium);
 }
-
 .placeholder-state .icon {
   font-size: 4rem;
   margin-bottom: var(--space-md);
-  opacity: 0.5;
 }
-
 .placeholder-state h3 {
   font-family: var(--font-display);
   color: var(--ocean-deep);
   margin-bottom: var(--space-sm);
 }
-
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(38, 70, 83, 0.5);
+  background: rgba(38,70,83,0.5);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -712,12 +287,10 @@ body {
   visibility: hidden;
   transition: all 0.3s;
 }
-
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
 }
-
 .modal {
   background: white;
   border-radius: 20px;
@@ -725,14 +298,7 @@ body {
   max-width: 440px;
   width: 90%;
   position: relative;
-  transform: scale(0.9);
-  transition: transform 0.3s;
 }
-
-.modal-overlay.active .modal {
-  transform: scale(1);
-}
-
 .modal-close {
   position: absolute;
   top: var(--space-md);
@@ -742,20 +308,7 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--sand-medium);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
 }
-
-.modal-close:hover {
-  background: var(--sand-warm);
-  color: var(--sand-dark);
-}
-
 .modal-icon {
   width: 60px;
   height: 60px;
@@ -767,35 +320,24 @@ body {
   font-size: 1.8rem;
   margin: 0 auto var(--space-md);
 }
-
 .modal h2 {
   font-family: var(--font-display);
   text-align: center;
   color: var(--ocean-deep);
   margin-bottom: var(--space-sm);
 }
-
-.modal > p, .modal-terms {
+.modal p {
   text-align: center;
-  color: var(--sand-dark);
   margin-bottom: var(--space-lg);
 }
-
 .modal input[type="email"] {
   width: 100%;
   padding: var(--space-md);
   border: 1px solid var(--ocean-foam);
   border-radius: 10px;
   font-size: 1rem;
-  font-family: var(--font-body);
   margin-bottom: var(--space-md);
 }
-
-.modal input[type="email"]:focus {
-  outline: none;
-  border-color: var(--ocean-teal);
-}
-
 .modal-btn {
   width: 100%;
   padding: var(--space-md);
@@ -805,51 +347,34 @@ body {
   border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
-  font-family: var(--font-body);
   cursor: pointer;
-  transition: all 0.2s;
 }
-
-.modal-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 162, 39, 0.3);
-}
-
 .modal-terms {
+  text-align: center;
   font-size: 0.75rem;
   color: var(--sand-medium);
   margin-top: var(--space-md);
-  margin-bottom: 0;
 }
-
 .pricing-options {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
   margin-bottom: var(--space-lg);
 }
-
 .pricing-option {
   border: 2px solid var(--ocean-foam);
   border-radius: 12px;
   padding: var(--space-md);
   cursor: pointer;
-  transition: all 0.2s;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
-
-.pricing-option:hover {
-  border-color: var(--ocean-teal);
-}
-
 .pricing-option.selected {
   border-color: var(--cliff-gold);
-  background: rgba(201, 162, 39, 0.05);
+  background: rgba(201,162,39,0.05);
 }
-
 .popular-badge {
   position: absolute;
   top: -10px;
@@ -861,31 +386,10 @@ body {
   border-radius: 100px;
   font-weight: 600;
 }
-
-.pricing-name {
-  font-weight: 600;
-  color: var(--ocean-deep);
-}
-
-.pricing-detail {
-  font-size: 0.8rem;
-  color: var(--sand-medium);
-}
-
-.pricing-price {
-  text-align: right;
-}
-
-.pricing-price strong {
-  font-size: 1.2rem;
-  color: var(--ocean-deep);
-}
-
-.pricing-price span {
-  font-size: 0.8rem;
-  color: var(--sand-medium);
-}
-
+.pricing-name { font-weight: 600; color: var(--ocean-deep); }
+.pricing-detail { font-size: 0.8rem; color: var(--sand-medium); }
+.pricing-price strong { font-size: 1.2rem; color: var(--ocean-deep); }
+.pricing-price span { font-size: 0.8rem; color: var(--sand-medium); }
 .toast {
   position: fixed;
   bottom: 20px;
@@ -897,35 +401,21 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transform: translateY(100px);
   opacity: 0;
   transition: all 0.3s;
   z-index: 1001;
 }
-
-.toast.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
+.toast.show { transform: translateY(0); opacity: 1; }
 .toast.success { background: var(--ocean-teal); }
 .toast.error { background: var(--sunset-coral); }
-
 .footer {
   text-align: center;
   padding: var(--space-xl);
   color: var(--sand-medium);
   font-size: 0.85rem;
 }
-
-.footer a {
-  color: var(--ocean-teal);
-  text-decoration: none;
-}
-
-.footer a:hover { text-decoration: underline; }
-
+.footer a { color: var(--ocean-teal); text-decoration: none; }
 .loading-spinner {
   width: 20px;
   height: 20px;
@@ -933,15 +423,12 @@ body {
   border-top-color: currentColor;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+  display: inline-block;
 }
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
-
   <header class="header">
     <div class="header-content">
       <div class="logo-section">
@@ -953,7 +440,6 @@ body {
       </div>
       <div class="header-actions">
         <span class="usage-badge" id="usageBadge">3 free analyses left</span>
-        <button class="btn btn-secondary" onclick="scrollToSources()">Sources</button>
         <button class="btn btn-primary" onclick="showUpgrade()">Upgrade Pro</button>
       </div>
     </div>
@@ -961,7 +447,7 @@ body {
 
   <section class="hero">
     <h2>Turn Documents Into <span>Actionable Insights</span></h2>
-    <p>Doctorate-level analysis with multi-source verification, claim-level confidence ratings, and traceable citations.</p>
+    <p>Doctorate-level analysis with multi-source verification and traceable citations.</p>
   </section>
 
   <main class="app-container">
@@ -976,72 +462,30 @@ body {
         <button class="mode-btn" data-mode="learning" onclick="setMode(this)">Learning Track</button>
       </div>
 
-      <div class="file-upload" onclick="document.getElementById('fileInput').click()">
-        <div class="file-upload-icon">📄</div>
-        <p><span>Click to upload</span> or drag & drop</p>
-        <p>PDF, TXT, or paste text below</p>
-        <input type="file" id="fileInput" accept=".pdf,.txt,.doc,.docx" style="display:none" onchange="handleFile(this)">
-      </div>
-      <div id="filePreview" style="display:none; margin-bottom: var(--space-md); padding: var(--space-sm); background: var(--sand-light); border-radius: 8px; font-size: 0.85rem;"></div>
-
       <div class="input-area">
-        <label>Your question or prompt</label>
-        <textarea id="promptInput" placeholder="e.g., Summarize the key findings and verify any statistics. What are the main areas of disagreement?"></textarea>
-      </div>
-
-      <div class="toggle-row">
-        <div class="toggle-label">
-          Freshness verification
-          <small>Enforce real-time source checking</small>
-        </div>
-        <label class="toggle-switch">
-          <input type="checkbox" id="freshnessToggle" checked>
-          <span class="toggle-slider"></span>
-        </label>
+        <label>Paste your document or question</label>
+        <textarea id="promptInput" placeholder="Paste document text here, or type a question like: What is the summary of quantum computing?"></textarea>
       </div>
 
       <button class="analyze-btn" id="analyzeBtn" onclick="runAnalysis()">
-        <span>Analyze Document</span>
-        <span>→</span>
+        Analyze Document
       </button>
     </aside>
 
     <section class="output-panel">
-      <div class="freshness-banner" id="freshnessBanner" style="display: none;">
-        <div class="freshness-icon">🔍</div>
-        <div class="freshness-info">
-          <strong>Freshness Check</strong>
-          <span id="freshnessTime">Verified as of: --</span>
-        </div>
-        <div class="verified-badge">
-          <span>✓</span> Verified
-        </div>
-      </div>
-
-      <div class="view-tabs">
-        <button class="view-tab active" data-view="all" onclick="setView(this)">All</button>
-        <button class="view-tab" data-view="common" onclick="setView(this)">Common Ground</button>
-        <button class="view-tab" data-view="disputed" onclick="setView(this)">Disputed</button>
-      </div>
-
       <div id="outputContent">
         <div class="placeholder-state">
           <div class="icon">📚</div>
           <h3>Ready to Analyze</h3>
-          <p>Upload a document or enter a question to get started with evidence-based analysis.</p>
+          <p>Paste document text or enter a question to get started.</p>
         </div>
-      </div>
-
-      <div class="sources-section" id="sourcesSection" style="display: none;">
-        <div class="sources-title">Sources (<span id="sourceCount">0</span>)</div>
-        <div id="sourcesList"></div>
       </div>
     </section>
   </main>
 
   <div class="modal-overlay" id="emailModal">
     <div class="modal">
-      <button class="modal-close" onclick="closeModal('emailModal')">×</button>
+      <button class="modal-close" onclick="closeModal('emailModal')">x</button>
       <div class="modal-icon">📚</div>
       <h2>Unlock CLIFF NOTEZ</h2>
       <p>Get 3 free doctorate-level analyses. No credit card required.</p>
@@ -1053,17 +497,16 @@ body {
 
   <div class="modal-overlay" id="upgradeModal">
     <div class="modal">
-      <button class="modal-close" onclick="closeModal('upgradeModal')">×</button>
+      <button class="modal-close" onclick="closeModal('upgradeModal')">x</button>
       <div class="modal-icon">🎓</div>
       <h2>Upgrade to Pro</h2>
       <p>Unlimited analyses, all modes, priority processing.</p>
-      
       <div class="pricing-options">
         <div class="pricing-option popular selected" data-plan="annual" onclick="selectPlan(this)">
           <span class="popular-badge">Best Value</span>
           <div>
             <div class="pricing-name">Annual</div>
-            <div class="pricing-detail">Save 35% vs monthly</div>
+            <div class="pricing-detail">Save 35%</div>
           </div>
           <div class="pricing-price">
             <strong>$149</strong>
@@ -1081,7 +524,6 @@ body {
           </div>
         </div>
       </div>
-      
       <button class="modal-btn" onclick="subscribePro()">Start Pro Access</button>
       <p class="modal-terms">30-day money-back guarantee</p>
     </div>
@@ -1108,12 +550,10 @@ const state = {
   email: localStorage.getItem('cliff_email') || null,
   usageCount: parseInt(localStorage.getItem('cliff_usage') || '0'),
   mode: 'doctoral',
-  view: 'all',
-  selectedPlan: 'annual',
-  uploadedFile: null
+  selectedPlan: 'annual'
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   updateUsageBadge();
   const params = new URLSearchParams(window.location.search);
   if (params.get('upgraded') === 'true') {
@@ -1122,54 +562,29 @@ document.addEventListener('DOMContentLoaded', () => {
     window.history.replaceState({}, '', window.location.pathname);
   }
   if (!state.email) {
-    setTimeout(() => showModal('emailModal'), 1500);
+    setTimeout(function() { showModal('emailModal'); }, 1500);
   }
 });
 
 function setMode(btn) {
-  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.mode-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
   state.mode = btn.dataset.mode;
 }
 
-function setView(btn) {
-  document.querySelectorAll('.view-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  state.view = btn.dataset.view;
-  filterClaims();
-}
-
-function filterClaims() {
-  const claims = document.querySelectorAll('.claim-card');
-  claims.forEach(card => {
-    const bucket = card.dataset.bucket;
-    if (state.view === 'all') card.style.display = 'block';
-    else if (state.view === 'common' && bucket === 'common') card.style.display = 'block';
-    else if (state.view === 'disputed' && bucket === 'disputed') card.style.display = 'block';
-    else card.style.display = 'none';
-  });
-}
-
-function handleFile(input) {
-  const file = input.files[0];
-  if (file) {
-    state.uploadedFile = file;
-    const preview = document.getElementById('filePreview');
-    preview.style.display = 'block';
-    preview.innerHTML = '📄 <strong>' + file.name + '</strong> (' + (file.size / 1024).toFixed(1) + ' KB)';
-  }
-}
-
 async function runAnalysis() {
-  const prompt = document.getElementById('promptInput').value.trim();
-  if (!prompt && !state.uploadedFile) {
-    showToast('Please enter a question or upload a document', 'error');
+  const content = document.getElementById('promptInput').value.trim();
+  
+  if (!content) {
+    showToast('Please enter text to analyze', 'error');
     return;
   }
+  
   if (!state.email) {
     showModal('emailModal');
     return;
   }
+  
   const isPro = localStorage.getItem('cliff_pro') === 'true';
   if (!isPro && state.usageCount >= FREE_LIMIT) {
     showUpgrade();
@@ -1180,217 +595,120 @@ async function runAnalysis() {
   btn.disabled = true;
   btn.innerHTML = '<span class="loading-spinner"></span> Analyzing...';
 
-  // Map mode to action
-  const actionMap = {
-    doctoral: 'analyze-document',
-    cliff: 'summarize',
-    exegesis: 'analyze-document',
-    tutor: 'extract-insights',
-    critic: 'analyze-document',
-    learning: 'extract-insights'
-  };
-  const action = actionMap[state.mode] || 'analyze-document';
-
   try {
     const response = await fetch(API_BASE + '/api/ai-query', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         app: 'cliff-notez',
-        action: action,
-        content: prompt,
+        action: 'analyze-document',
+        content: content,
         analysisType: state.mode,
         email: state.email
       })
     });
-    if (!response.ok) throw new Error('Analysis failed');
+    
     const data = await response.json();
+    
+    if (data.error) {
+      showToast(data.error, 'error');
+      return;
+    }
+    
     if (!isPro) {
       state.usageCount++;
       localStorage.setItem('cliff_usage', state.usageCount.toString());
       updateUsageBadge();
     }
-    renderRealAnalysis(data);
+    
+    // Parse the result
+    let result;
+    try {
+      result = typeof data.result === 'string' ? JSON.parse(data.result) : data.result;
+    } catch(e) {
+      result = { summary: data.result };
+    }
+    
+    renderResults(result);
+    
   } catch (error) {
     console.error('Analysis error:', error);
     showToast('Analysis failed - please try again', 'error');
   } finally {
     btn.disabled = false;
-    btn.innerHTML = '<span>Analyze Document</span><span>→</span>';
+    btn.innerHTML = 'Analyze Document';
   }
 }
 
-function renderRealAnalysis(data) {
+function renderResults(data) {
   const output = document.getElementById('outputContent');
-  const freshnessBanner = document.getElementById('freshnessBanner');
+  let html = '';
   
-  if (document.getElementById('freshnessToggle').checked) {
-    freshnessBanner.style.display = 'flex';
-    document.getElementById('freshnessTime').textContent = 'Verified as of: ' + new Date().toLocaleString();
-  }
-
-  const modeLabels = {
-    doctoral: 'Doctoral Report',
-    cliff: 'Cliff Notes',
-    exegesis: 'Exegesis',
-    tutor: 'Tutor Mode',
-    critic: 'Critic Mode',
-    learning: 'Learning Track'
-  };
-
-  let html = '<div style="margin-bottom: var(--space-md); padding: var(--space-sm); background: rgba(42, 157, 143, 0.1); border-radius: 8px; font-size: 0.85rem; color: var(--ocean-teal);"><strong>Mode:</strong> ' + modeLabels[state.mode] + ' <strong>Pipelines:</strong> AI Analysis, Evidence Extraction</div>';
-
-  // Title
   if (data.title) {
-    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin-bottom: var(--space-md);">' + escapeHtml(data.title) + '</h3>';
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin-bottom: var(--space-md);">' + esc(data.title) + '</h3>';
   }
-
-  // Summary
+  
   if (data.summary) {
-    html += '<div class="quote-card"><div class="quote-text">' + escapeHtml(data.summary) + '</div><div class="quote-source">— AI Summary</div></div>';
+    html += '<div class="result-card"><h4>Summary</h4><p>' + esc(data.summary) + '</p></div>';
   }
-
-  // Key Points
-  if (data.keyPoints && data.keyPoints.length > 0) {
-    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Key Points</h3>';
-    data.keyPoints.forEach(function(point, i) {
-      html += '<div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">' + escapeHtml(point) + '</div><span class="ecr-chip ecr-4">Key Point</span></div><div class="claim-meta"><span class="bucket-badge bucket-common">Finding</span></div></div>';
-    });
+  
+  if (data.keyPoints && data.keyPoints.length) {
+    html += '<div class="result-card"><h4>Key Points</h4><ul>';
+    data.keyPoints.forEach(function(p) { html += '<li>' + esc(p) + '</li>'; });
+    html += '</ul></div>';
   }
-
-  // Insights
-  if (data.insights && data.insights.length > 0) {
-    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Insights</h3>';
-    data.insights.forEach(function(insight, i) {
-      var insightText = typeof insight === 'object' ? insight.insight : insight;
-      var importance = typeof insight === 'object' && insight.importance ? insight.importance : 'medium';
-      var ecrClass = importance === 'high' ? 'ecr-5' : (importance === 'low' ? 'ecr-3' : 'ecr-4');
-      html += '<div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">' + escapeHtml(insightText) + '</div><span class="ecr-chip ' + ecrClass + '">' + importance.charAt(0).toUpperCase() + importance.slice(1) + '</span></div></div>';
-    });
+  
+  if (data.themes && data.themes.length) {
+    html += '<div class="result-card"><h4>Themes</h4><ul>';
+    data.themes.forEach(function(t) { html += '<li>' + esc(t) + '</li>'; });
+    html += '</ul></div>';
   }
-
-  // Themes
-  if (data.themes && data.themes.length > 0) {
-    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Themes</h3>';
-    html += '<div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">';
-    data.themes.forEach(function(theme) {
-      html += '<span class="bucket-badge bucket-common" style="padding: var(--space-xs) var(--space-sm);">' + escapeHtml(theme) + '</span>';
-    });
-    html += '</div>';
-  }
-
-  // Questions
-  if (data.questions && data.questions.length > 0) {
-    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Questions Raised</h3>';
-    data.questions.forEach(function(q) {
-      html += '<div class="claim-card" data-bucket="disputed"><div class="claim-header"><div class="claim-text">' + escapeHtml(q) + '</div><span class="ecr-chip ecr-3">Question</span></div></div>';
-    });
-  }
-
-  // Action Items
-  if (data.actionItems && data.actionItems.length > 0) {
-    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Action Items</h3>';
-    html += '<div style="background: var(--sand-light); padding: var(--space-md); border-radius: 10px;"><ul style="margin-left: var(--space-md); list-style-type: disc;">';
-    data.actionItems.forEach(function(item) {
-      html += '<li style="margin-bottom: var(--space-xs);">' + escapeHtml(item) + '</li>';
+  
+  if (data.insights && data.insights.length) {
+    html += '<div class="result-card"><h4>Insights</h4><ul>';
+    data.insights.forEach(function(i) { 
+      var txt = typeof i === 'object' ? i.insight : i;
+      html += '<li>' + esc(txt) + '</li>'; 
     });
     html += '</ul></div>';
   }
-
-  // Recommendations (for extract-insights action)
-  if (data.recommendations && data.recommendations.length > 0) {
-    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Recommendations</h3>';
-    data.recommendations.forEach(function(rec) {
-      html += '<div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">' + escapeHtml(rec) + '</div><span class="ecr-chip ecr-5">Recommendation</span></div></div>';
-    });
+  
+  if (data.questions && data.questions.length) {
+    html += '<div class="result-card"><h4>Questions Raised</h4><ul>';
+    data.questions.forEach(function(q) { html += '<li>' + esc(q) + '</li>'; });
+    html += '</ul></div>';
   }
-
-  // Bullet points (for summarize action)
-  if (data.bulletPoints && data.bulletPoints.length > 0) {
-    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Key Points</h3>';
-    data.bulletPoints.forEach(function(point) {
-      html += '<div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">' + escapeHtml(point) + '</div></div></div>';
-    });
+  
+  if (data.actionItems && data.actionItems.length) {
+    html += '<div class="result-card"><h4>Action Items</h4><ul>';
+    data.actionItems.forEach(function(a) { html += '<li>' + esc(a) + '</li>'; });
+    html += '</ul></div>';
   }
-
+  
+  if (!html) {
+    html = '<div class="result-card"><p>' + esc(JSON.stringify(data)) + '</p></div>';
+  }
+  
   output.innerHTML = html;
 }
 
-function escapeHtml(text) {
-  if (!text) return '';
-  return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-function renderAnalysis(data) {
-  const output = document.getElementById('outputContent');
-  const freshnessBanner = document.getElementById('freshnessBanner');
-  if (document.getElementById('freshnessToggle').checked) {
-    freshnessBanner.style.display = 'flex';
-    document.getElementById('freshnessTime').textContent = 'Verified as of: ' + new Date().toLocaleString();
-  }
-  output.innerHTML = data.html || renderDemoContent();
-  showSourcesSection();
-}
-
-function renderDemoAnalysis(prompt) {
-  const output = document.getElementById('outputContent');
-  const freshnessBanner = document.getElementById('freshnessBanner');
-  if (document.getElementById('freshnessToggle').checked) {
-    freshnessBanner.style.display = 'flex';
-    document.getElementById('freshnessTime').textContent = 'Verified as of: ' + new Date().toLocaleString();
-  }
-  output.innerHTML = renderDemoContent();
-  showSourcesSection();
-}
-
-function renderDemoContent() {
-  const modeLabels = {
-    doctoral: 'Doctoral Report',
-    cliff: 'Cliff Notes',
-    exegesis: 'Exegesis',
-    tutor: 'Tutor Mode',
-    critic: 'Critic Mode',
-    learning: 'Learning Track'
-  };
-  return '<div style="margin-bottom: var(--space-md); padding: var(--space-sm); background: rgba(42, 157, 143, 0.1); border-radius: 8px; font-size: 0.85rem; color: var(--ocean-teal);"><strong>Mode:</strong> ' + modeLabels[state.mode] + ' <strong>Pipelines:</strong> Validation, Source Verification, Statistical Check</div><h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin-bottom: var(--space-md);">Key Findings</h3><div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">Evidence-based analysis provides higher reliability than unsourced summaries, with cross-referencing improving accuracy by 40-60%.</div><span class="ecr-chip ecr-5">5/5 Strong</span></div><div class="claim-meta"><span class="bucket-badge bucket-common">Common Ground</span><a class="source-link" onclick="highlightSource(\'s1\')">📄 Source 1</a><a class="source-link" onclick="highlightSource(\'s2\')">📄 Source 2</a></div></div><div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">Claim-level confidence ratings help users calibrate trust appropriately, especially for complex or contested topics.</div><span class="ecr-chip ecr-4">4/5 Consensus</span></div><div class="claim-meta"><span class="bucket-badge bucket-common">Common Ground</span><a class="source-link" onclick="highlightSource(\'s2\')">📄 Source 2</a><a class="source-link" onclick="highlightSource(\'s3\')">📄 Source 3</a></div></div><div class="claim-card" data-bucket="disputed"><div class="claim-header"><div class="claim-text">The optimal level of evidence density depends on user expertise; novices may prefer simplified views while experts want full citations.</div><span class="ecr-chip ecr-3">3/5 Mixed</span></div><div class="claim-meta"><span class="bucket-badge bucket-disputed">Disputed</span><a class="source-link" onclick="highlightSource(\'s3\')">📄 Source 3</a></div></div><div class="quote-card"><div class="quote-text">"Every critical claim should be grounded, checked, and labeled for confidence to maintain research integrity."</div><div class="quote-source">— Research Methods Handbook, Chapter 4.2 (2024 Edition)</div></div><div class="math-check"><div class="math-check-header">📊 Statistical Verification</div><div class="math-values"><div class="math-value"><label>Reported</label><strong>Cohen\'s d = 0.68</strong></div><div class="math-value"><label>Recomputed</label><strong>Cohen\'s d = 0.66</strong></div></div><div class="discrepancy-flag">⚠️ Minor discrepancy detected (within tolerance)</div></div><h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Limitations</h3><div style="background: var(--sand-light); padding: var(--space-md); border-radius: 10px; font-size: 0.9rem; color: var(--sand-dark);"><ul style="margin-left: var(--space-md); list-style-type: disc;"><li>Analysis based on available sources; some primary sources may be paywalled</li><li>Statistical recomputation requires sufficient input data</li><li>Freshness verification reflects retrieval time, not original publication</li></ul></div>';
-}
-
-function showSourcesSection() {
-  const section = document.getElementById('sourcesSection');
-  section.style.display = 'block';
-  document.getElementById('sourceCount').textContent = '3';
-  document.getElementById('sourcesList').innerHTML = '<div class="source-item" id="source-s1"><div class="source-icon">📄</div><div class="source-details"><h4>Evidence-Based Research Methods</h4><p>Academic Press · Published 2024</p><span class="source-tag">Primary Source</span></div></div><div class="source-item" id="source-s2"><div class="source-icon">📄</div><div class="source-details"><h4>Trust Calibration in Information Systems</h4><p>Journal of Information Science · Published 2023</p><span class="source-tag">Peer Reviewed</span></div></div><div class="source-item" id="source-s3"><div class="source-icon">📄</div><div class="source-details"><h4>UX Design for Complex Information</h4><p>Design Research Quarterly · Published 2024</p><span class="source-tag">Secondary Source</span></div></div>';
-}
-
-function highlightSource(sourceId) {
-  event.preventDefault();
-  showSourcesSection();
-  document.querySelectorAll('.source-item').forEach(s => s.classList.remove('highlighted'));
-  const sourceEl = document.getElementById('source-' + sourceId);
-  if (sourceEl) {
-    sourceEl.classList.add('highlighted');
-    sourceEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => sourceEl.classList.remove('highlighted'), 3000);
-  }
-}
-
-function scrollToSources() {
-  showSourcesSection();
-  document.getElementById('sourcesSection').scrollIntoView({ behavior: 'smooth' });
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
 function updateUsageBadge() {
   const badge = document.getElementById('usageBadge');
   const isPro = localStorage.getItem('cliff_pro') === 'true';
   if (isPro) {
-    badge.textContent = 'Pro ✓';
+    badge.textContent = 'Pro';
     badge.style.background = 'var(--ocean-teal)';
     badge.style.color = 'white';
   } else {
     const remaining = FREE_LIMIT - state.usageCount;
-    badge.textContent = remaining + ' free ' + (remaining === 1 ? 'analysis' : 'analyses') + ' left';
+    badge.textContent = remaining + ' free analyses left';
     if (remaining <= 1) {
-      badge.style.background = 'rgba(231, 111, 81, 0.2)';
+      badge.style.background = 'rgba(231,111,81,0.2)';
       badge.style.color = 'var(--sunset-coral)';
     }
   }
@@ -1406,21 +724,19 @@ async function submitEmail() {
     await fetch(API_BASE + '/api/email-capture', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, source: 'cliff-notez' })
+      body: JSON.stringify({ email: email, source: 'cliff-notez' })
     });
-  } catch (e) {}
+  } catch(e) {}
   state.email = email;
   localStorage.setItem('cliff_email', email);
   closeModal('emailModal');
   showToast('Welcome! You have 3 free analyses.', 'success');
 }
 
-function showUpgrade() {
-  showModal('upgradeModal');
-}
+function showUpgrade() { showModal('upgradeModal'); }
 
 function selectPlan(el) {
-  document.querySelectorAll('.pricing-option').forEach(p => p.classList.remove('selected'));
+  document.querySelectorAll('.pricing-option').forEach(function(p) { p.classList.remove('selected'); });
   el.classList.add('selected');
   state.selectedPlan = el.dataset.plan;
 }
@@ -1434,29 +750,23 @@ function subscribePro() {
   window.location.href = 'https://api.dubltap.io/create-checkout?priceId=' + priceId + '&email=' + email + '&success_url=' + successUrl + '&cancel_url=' + cancelUrl;
 }
 
-function showModal(id) {
-  document.getElementById(id).classList.add('active');
-}
+function showModal(id) { document.getElementById(id).classList.add('active'); }
+function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
-function closeModal(id) {
-  document.getElementById(id).classList.remove('active');
-}
-
-function showToast(message, type) {
+function showToast(msg, type) {
   type = type || 'success';
-  const toast = document.getElementById('toast');
-  document.getElementById('toastIcon').textContent = type === 'success' ? '✓' : '⚠';
-  document.getElementById('toastText').textContent = message;
+  var toast = document.getElementById('toast');
+  document.getElementById('toastIcon').textContent = type === 'success' ? '✓' : '!';
+  document.getElementById('toastText').textContent = msg;
   toast.className = 'toast ' + type + ' show';
-  setTimeout(() => { toast.classList.remove('show'); }, 3000);
+  setTimeout(function() { toast.classList.remove('show'); }, 3000);
 }
 
-document.querySelectorAll('.modal-overlay').forEach(overlay => {
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('active');
+document.querySelectorAll('.modal-overlay').forEach(function(o) {
+  o.addEventListener('click', function(e) {
+    if (e.target === o) o.classList.remove('active');
   });
 });
 </script>
-
 </body>
 </html>
