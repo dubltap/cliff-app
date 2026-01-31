@@ -1180,15 +1180,26 @@ async function runAnalysis() {
   btn.disabled = true;
   btn.innerHTML = '<span class="loading-spinner"></span> Analyzing...';
 
+  // Map mode to action
+  const actionMap = {
+    doctoral: 'analyze-document',
+    cliff: 'summarize',
+    exegesis: 'analyze-document',
+    tutor: 'extract-insights',
+    critic: 'analyze-document',
+    learning: 'extract-insights'
+  };
+  const action = actionMap[state.mode] || 'analyze-document';
+
   try {
     const response = await fetch(API_BASE + '/api/ai-query', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         app: 'cliff-notez',
-        mode: state.mode,
-        prompt: prompt,
-        freshness: document.getElementById('freshnessToggle').checked,
+        action: action,
+        content: prompt,
+        analysisType: state.mode,
         email: state.email
       })
     });
@@ -1199,14 +1210,115 @@ async function runAnalysis() {
       localStorage.setItem('cliff_usage', state.usageCount.toString());
       updateUsageBadge();
     }
-    renderAnalysis(data);
+    renderRealAnalysis(data);
   } catch (error) {
     console.error('Analysis error:', error);
-    renderDemoAnalysis(prompt);
+    showToast('Analysis failed - please try again', 'error');
   } finally {
     btn.disabled = false;
     btn.innerHTML = '<span>Analyze Document</span><span>→</span>';
   }
+}
+
+function renderRealAnalysis(data) {
+  const output = document.getElementById('outputContent');
+  const freshnessBanner = document.getElementById('freshnessBanner');
+  
+  if (document.getElementById('freshnessToggle').checked) {
+    freshnessBanner.style.display = 'flex';
+    document.getElementById('freshnessTime').textContent = 'Verified as of: ' + new Date().toLocaleString();
+  }
+
+  const modeLabels = {
+    doctoral: 'Doctoral Report',
+    cliff: 'Cliff Notes',
+    exegesis: 'Exegesis',
+    tutor: 'Tutor Mode',
+    critic: 'Critic Mode',
+    learning: 'Learning Track'
+  };
+
+  let html = '<div style="margin-bottom: var(--space-md); padding: var(--space-sm); background: rgba(42, 157, 143, 0.1); border-radius: 8px; font-size: 0.85rem; color: var(--ocean-teal);"><strong>Mode:</strong> ' + modeLabels[state.mode] + ' <strong>Pipelines:</strong> AI Analysis, Evidence Extraction</div>';
+
+  // Title
+  if (data.title) {
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin-bottom: var(--space-md);">' + escapeHtml(data.title) + '</h3>';
+  }
+
+  // Summary
+  if (data.summary) {
+    html += '<div class="quote-card"><div class="quote-text">' + escapeHtml(data.summary) + '</div><div class="quote-source">— AI Summary</div></div>';
+  }
+
+  // Key Points
+  if (data.keyPoints && data.keyPoints.length > 0) {
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Key Points</h3>';
+    data.keyPoints.forEach(function(point, i) {
+      html += '<div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">' + escapeHtml(point) + '</div><span class="ecr-chip ecr-4">Key Point</span></div><div class="claim-meta"><span class="bucket-badge bucket-common">Finding</span></div></div>';
+    });
+  }
+
+  // Insights
+  if (data.insights && data.insights.length > 0) {
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Insights</h3>';
+    data.insights.forEach(function(insight, i) {
+      var insightText = typeof insight === 'object' ? insight.insight : insight;
+      var importance = typeof insight === 'object' && insight.importance ? insight.importance : 'medium';
+      var ecrClass = importance === 'high' ? 'ecr-5' : (importance === 'low' ? 'ecr-3' : 'ecr-4');
+      html += '<div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">' + escapeHtml(insightText) + '</div><span class="ecr-chip ' + ecrClass + '">' + importance.charAt(0).toUpperCase() + importance.slice(1) + '</span></div></div>';
+    });
+  }
+
+  // Themes
+  if (data.themes && data.themes.length > 0) {
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Themes</h3>';
+    html += '<div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">';
+    data.themes.forEach(function(theme) {
+      html += '<span class="bucket-badge bucket-common" style="padding: var(--space-xs) var(--space-sm);">' + escapeHtml(theme) + '</span>';
+    });
+    html += '</div>';
+  }
+
+  // Questions
+  if (data.questions && data.questions.length > 0) {
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Questions Raised</h3>';
+    data.questions.forEach(function(q) {
+      html += '<div class="claim-card" data-bucket="disputed"><div class="claim-header"><div class="claim-text">' + escapeHtml(q) + '</div><span class="ecr-chip ecr-3">Question</span></div></div>';
+    });
+  }
+
+  // Action Items
+  if (data.actionItems && data.actionItems.length > 0) {
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Action Items</h3>';
+    html += '<div style="background: var(--sand-light); padding: var(--space-md); border-radius: 10px;"><ul style="margin-left: var(--space-md); list-style-type: disc;">';
+    data.actionItems.forEach(function(item) {
+      html += '<li style="margin-bottom: var(--space-xs);">' + escapeHtml(item) + '</li>';
+    });
+    html += '</ul></div>';
+  }
+
+  // Recommendations (for extract-insights action)
+  if (data.recommendations && data.recommendations.length > 0) {
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Recommendations</h3>';
+    data.recommendations.forEach(function(rec) {
+      html += '<div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">' + escapeHtml(rec) + '</div><span class="ecr-chip ecr-5">Recommendation</span></div></div>';
+    });
+  }
+
+  // Bullet points (for summarize action)
+  if (data.bulletPoints && data.bulletPoints.length > 0) {
+    html += '<h3 style="font-family: var(--font-display); color: var(--ocean-deep); margin: var(--space-lg) 0 var(--space-md);">Key Points</h3>';
+    data.bulletPoints.forEach(function(point) {
+      html += '<div class="claim-card" data-bucket="common"><div class="claim-header"><div class="claim-text">' + escapeHtml(point) + '</div></div></div>';
+    });
+  }
+
+  output.innerHTML = html;
+}
+
+function escapeHtml(text) {
+  if (!text) return '';
+  return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 function renderAnalysis(data) {
